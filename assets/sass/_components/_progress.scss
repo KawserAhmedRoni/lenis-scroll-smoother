@@ -1,0 +1,35 @@
+// Progress bar area start here ***
+.progress {
+	&-area {
+		overflow: hidden;
+	}
+	&__item {
+		.progress {
+			background-color: var(--theme-color2);
+			height: 15px;
+			border-radius: 15px;
+			&.dark-mode {
+				background-color: var(--theme-color2);
+			}
+			.progress-bar {
+				background-color: var(--theme-color1);
+			}
+		}
+	}
+	&__title {
+		@include justify;
+		margin-bottom: 5px;
+		h5 {
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 34px;
+			color: var(--heading-color);
+		}
+		span {
+			color: var(--theme-color3);
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+}
+// Progress bar area end here ***

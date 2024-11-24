@@ -1,0 +1,462 @@
+// Logo area start here ***
+.logo {
+	display: block;
+	width: 204px;
+	img {
+		width: 100%;
+	}
+}
+// Logo area end here ***
+
+// Header area start here ***
+.header {
+	&-top {
+		&-area {
+			overflow: hidden;
+			padding: 10px 0;
+			border-bottom: 2px solid #f4f4f4;
+			&.dark-area {
+				border-bottom: 2px solid #6a6a6a1a;
+			}
+		}
+		&__wrp {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		&__socials {
+			display: flex;
+			align-items: center;
+			gap: 25px;
+			a {
+				&:hover {
+					color: var(--theme-color1);
+					transform: translateY(-2px);
+				}
+			}
+		}
+		&__links {
+			display: flex;
+			align-items: center;
+			gap: 60px;
+			li {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				a {
+					&:hover {
+						color: var(--theme-color1);
+					}
+				}
+				&:first-child {
+					position: relative;
+					&::after {
+						position: absolute;
+						top: -10px;
+						right: -30px;
+						height: 50px;
+						width: 2px;
+						background-color: #f4f4f4;
+						content: "";
+					}
+				}
+			}
+			&.dark-area {
+				li {
+					&::after {
+						background-color: #6a6a6a1a;
+					}
+				}
+			}
+		}
+	}
+	&-area {
+		top: 50px;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+		&.menu-fixed {
+			top: 0;
+			background-color: var(--white);
+			box-shadow: var(--shadow);
+		}
+		@include breakpoint(max-lg) {
+			top: 0;
+		}
+	}
+	&__main {
+		@include justify-wrp;
+		max-width: 1200px;
+		margin: 0 auto;
+		.main-menu {
+			@include flex;
+			gap: 60px;
+			ul {
+				@include flex;
+				gap: 40px;
+				@include breakpoint(max-xl) {
+					gap: 20px;
+				}
+				li {
+					position: relative;
+					a {
+						font-weight: 600;
+						padding: 30px 0;
+						font-size: 14px;
+						line-height: 26px;
+						color: var(--heading-color);
+						text-transform: uppercase;
+						@include breakpoint(max-xl) {
+							font-size: 16px;
+						}
+						i {
+							font-size: 12px;
+							transition: var(--transition);
+						}
+					}
+					.sub-menu {
+						position: absolute;
+						left: 0;
+						top: 80px;
+						z-index: 99;
+						flex-direction: column;
+						gap: 0;
+						width: 250px;
+						border: 1px solid var(--border);
+						box-shadow: var(--shadow);
+						background-color: var(--white);
+						border-radius: 10px;
+						transition: var(--transition);
+						opacity: 0;
+						visibility: hidden;
+						transform: translateY(10px);
+						li {
+							width: 100%;
+							&:not(:last-child) {
+								border-bottom: 1px solid var(--border);
+							}
+							a {
+								display: block;
+								padding: 12px 20px;
+								color: var(--heading-color) !important;
+								&:hover {
+									padding-left: 25px;
+									color: var(--theme-color1) !important;
+								}
+							}
+						}
+					}
+					&:hover {
+						.sub-menu {
+							opacity: 1;
+							visibility: visible;
+							transform: translateY(0px);
+						}
+						&:hover {
+							a {
+								color: var(--theme-color1);
+							}
+							i {
+								transform: rotate(-180deg);
+								color: var(--theme-color1);
+							}
+						}
+					}
+				}
+			}
+			&-light {
+				ul {
+					li {
+						a {
+							color: var(--white);
+						}
+						&:hover {
+							a {
+								color: var(--white) !important;
+							}
+							i {
+								color: var(--white) !important;
+							}
+						}
+						.sub-menu {
+							background-color: var(--black);
+							border: 1px solid var(--border);
+							li {
+								&:not(:last-child) {
+									border-bottom: 1px solid var(--border);
+								}
+								a {
+									color: var(--white) !important;
+									&:hover {
+										color: var(--theme-color1) !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@include breakpoint(max-lg) {
+			padding: 15px 0;
+		}
+		.menu-btns {
+			@include flex;
+			gap: 25px;
+			.search-trigger {
+				font-size: 24px;
+				color: var(--heading-color);
+				margin-top: 8px;
+			}
+		}
+		.menubars {
+			width: 28px;
+			line-height: 8px;
+			text-align: right;
+			span {
+				width: 100%;
+				height: 2px;
+				background-color: var(--heading-color);
+				transition: var(--transition);
+				&:nth-child(2) {
+					width: 70%;
+					text-align: right;
+				}
+			}
+			&:hover {
+				span {
+					&:nth-child(2) {
+						width: 100%;
+					}
+				}
+			}
+			&-light {
+				span {
+					background-color: var(--white);
+				}
+			}
+		}
+	}
+	&-two {
+		&-area {
+			top: 0;
+			position: fixed;
+			width: 100%;
+			z-index: 99;
+			background-color: transparent;
+		}
+		&__main {
+			@extend .header__main;
+			max-width: 1560px;
+		}
+	}
+	&-three {
+		&-area {
+			@extend .header-two-area;
+			border-bottom: 1px solid #0000001a;
+		}
+		&__main {
+			@extend.header__main;
+			max-width: 1865px;
+			padding: 0 15px;
+			@include breakpoint(max-lg) {
+				padding: 15px;
+			}
+		}
+	}
+	&-four {
+		&-area {
+			@extend .header-two-area;
+			&.menu-fixed {
+				background-color: var(--black);
+			}
+		}
+		&__main {
+			@extend .header__main;
+			max-width: 1370px;
+		}
+	}
+	&-five {
+		&-area {
+			@extend .header-three-area;
+		}
+		&__main {
+			@extend .header-three__main;
+			max-width: 1690px;
+		}
+	}
+}
+// Header area end here ***
+
+// Offcanvas area start here ***
+.offcanvas {
+	width: 375px !important;
+	border-left: 3px solid var(--theme-color1) !important;
+	@media screen and (max-width: 375px) {
+		width: 320px !important;
+	}
+	&-backdrop {
+		background-color: rgba(0, 0, 0, 0.8);
+		cursor: url("/assets/images/icon/x.png") 16 16, auto;
+		&.show {
+			opacity: 1;
+		}
+	}
+	.btn-close {
+		@include radius(25px, 25px, 25px);
+		font-size: 22px;
+		color: var(--white);
+		background-color: var(--theme-color1);
+		opacity: 1;
+		background-image: none;
+		transition: var(--transition);
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+}
+// Offcanvas area end here ***
+
+// Sidebar area start here ***
+.sidebar {
+	&-area {
+		z-index: 99999;
+		background-color: var(--heading-color);
+	}
+	&__socials {
+		ul {
+			@include flex;
+			gap: 12px;
+			li {
+				@include radius(40px, 40px, 35px);
+				background-color: var(--theme-color1);
+			}
+		}
+	}
+	&__btns {
+		@include flex;
+		gap: 12px;
+		a {
+			padding: 6px 16px;
+			border-radius: 8px;
+			color: var(--white);
+			background-color: var(--theme-color1);
+		}
+	}
+	&__contact-info {
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+				i {
+					color: var(--theme-color1);
+					margin-right: 8px;
+				}
+				a {
+					color: var(--text-color3);
+				}
+			}
+		}
+	}
+	&__text {
+		color: var(--text-color3);
+	}
+	&__body {
+		margin-top: 30px;
+		.mean-container .mean-nav {
+			background-color: var(--heading-color);
+		}
+		.mean-container .mean-nav ul li a.mean-expand {
+			background-color: var(--theme-color1);
+		}
+	}
+}
+// Sidebar area end here ***
+
+// Mobile menu area start here ***
+.mobile-menu {
+	.meanmenu-reveal {
+		display: none !important;
+	}
+	&.mean-container .mean-nav > ul {
+		width: 100%;
+		display: block !important;
+	}
+	ul {
+		li {
+			a {
+				i {
+					display: none;
+				}
+			}
+		}
+	}
+}
+// Mobile menu area end here ***
+
+// Fullscreen search area start here ***
+.search-wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.8);
+	cursor: url(/assets/images/icon/x.png), auto;
+	.search-inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.search-cell {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		transform: translateY(-50%);
+	}
+	.search-field-holder {
+		width: 50%;
+		margin: auto;
+		position: relative;
+		animation: slideInUp 0.3s;
+	}
+	.main-search-input {
+		width: 100%;
+		height: 70px;
+		border: 0;
+		padding: 0 50px;
+		background: transparent;
+		font-size: 25px;
+		color: var(--white);
+		border-bottom: 1px solid var(--white);
+		text-align: center;
+		letter-spacing: 2px;
+	}
+	input.main-search-input::placeholder {
+		color: var(--white);
+		opacity: 1;
+		font-size: 24px;
+	}
+
+	.search-close {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		font-size: 30px;
+		color: var(--white);
+		cursor: pointer;
+		@include radius(50px, 50px, 50px);
+		transition: var(--transition);
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+}
+// Fullscreen search area end here ***

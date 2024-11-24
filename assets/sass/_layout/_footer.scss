@@ -1,0 +1,417 @@
+// Footer area start here ***
+.footer {
+	&-area {
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		background-color: var(--sub-bg);
+		&.dark-area{
+			background-color: #181818;
+		}
+	}
+	&__shape1 {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		z-index: -1;
+		@include breakpoint(max-md) {
+			display: none;
+		}
+	}
+	&__shape2 {
+		position: absolute;
+		bottom: 50px;
+		right: 0;
+		z-index: -1;
+	}
+	&__wrp {
+		max-width: 1400px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		@include breakpoint(max-lg) {
+			flex-wrap: wrap;
+		}
+		&-bottom {
+			max-width: 1400px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			border-top: 2px solid #e4e4e4;
+			align-items: start;
+			gap: 20px;
+			&.sub-border{
+			border-top: 2px solid #6A6A6A33;
+			}
+			&.black-border{
+			border-top: 2px solid #E4E4E41A;
+			}
+			@include breakpoint(max-sm) {
+				flex-wrap: wrap;
+			}
+			p {
+				max-width: 360px;
+				position: relative;
+				color: var(--theme-color2);
+				padding-left: 15px;
+				&::after {
+					position: absolute;
+					top: 12px;
+					left: 0px;
+					content: "";
+					@include radius(6px, 6px, 6px);
+					background-color: var(--theme-color2);
+				}
+			}
+			ul {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 10px;
+				flex-wrap: wrap;
+				li {
+					a {
+						font-weight: 600;
+						color: var(--theme-color3);
+						font-size: 24px;
+						position: relative;
+						padding-left: 15px;
+						@include breakpoint(max-sm) {
+							font-size: 18px;
+						}
+						&::after {
+							position: absolute;
+							top: 12px;
+							left: 0px;
+							content: "";
+							@include radius(8px, 8px, 8px);
+							background-color: var(--theme-color3);
+						}
+						&:hover {
+							&::after {
+								background-color: var(--theme-color1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__right {
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		@include breakpoint(max-lg) {
+			flex-wrap: wrap;
+		}
+		@include breakpoint(max-md) {
+			width: 100%;
+		}
+	}
+	&__item {
+		width: 150px;
+		.title {
+			margin-bottom: 15px;
+			color: var(--theme-color3);
+		}
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+				a {
+					color: var(--theme-color2);
+					font-size: 18px;
+					&:hover {
+						color: var(--theme-color1);
+						padding-left: 5px;
+					}
+				}
+			}
+		}
+	}
+	&-bottom {
+		background-color: var(--theme-color2);
+		padding: 10px 0;
+		&__wrp {
+			max-width: 1400px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 5px;
+			@include breakpoint(max-sm) {
+				flex-wrap: wrap;
+				justify-content: center;
+				text-align: center;
+			}
+			p {
+				color: var(--white);
+				font-size: 12px;
+				a {
+					color: inherit;
+					&:hover {
+						color: var(--theme-color1);
+					}
+				}
+			}
+			.socials {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				a {
+					color: var(--white);
+					font-size: 15px;
+					&:hover {
+						color: var(--theme-color1);
+					}
+				}
+			}
+		}
+	}
+	&-two {
+		&-area {
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+			background-color: var(--theme-color3);
+		}
+		&__shape {
+			position: absolute;
+			left: 0;
+			bottom: 125px;
+			opacity: 0.051;
+			z-index: -1;
+			@include breakpoint(max-lg) {
+				display: none;
+			}
+			&-two {
+				position: absolute;
+				right: 0;
+				bottom: 0px;
+				z-index: -1;
+				opacity: 0.22;
+			}
+		}
+		&__wrp {
+			max-width: 1120px;
+			margin: 0 auto;
+		}
+		&__link {
+			width: 45%;
+			@include justify;
+			gap: 20px;
+			@include breakpoint(max-md) {
+				flex-wrap: wrap;
+			}
+
+			&-item {
+				@extend .footer-two__item;
+				width: 225px;
+			}
+		}
+		&__item {
+			.subscribe {
+				position: relative;
+				input {
+					width: 100%;
+					padding: 20px 40px;
+					background-color: #1a1a1a;
+					border: none;
+					color: var(--text-color3);
+				}
+				button {
+					@include radius(50px, 50px, 50px);
+					border-radius: 0px;
+					color: var(--text-color1);
+					background-color: var(--theme-color1);
+					position: absolute;
+					top: 8px;
+					right: 10px;
+				}
+			}
+			ul {
+				li {
+					&:not(:last-child) {
+						margin-bottom: 15px;
+					}
+					a {
+						color: var(--paragraph);
+						&:hover {
+							color: var(--theme-color1);
+						}
+					}
+					h4 {
+						font-weight: 600;
+						a {
+							color: var(--white);
+							&:hover {
+								color: var(--theme-color1);
+							}
+						}
+					}
+				}
+			}
+			&-bottom {
+				.socials {
+					@include flex;
+					gap: 15px;
+					margin-bottom: 50px;
+					a {
+						font-size: 20px;
+						color: var(--white);
+						&:hover {
+							color: var(--theme-color1);
+						}
+					}
+				}
+			}
+		}
+		&__bottom {
+			@include justify;
+			@include breakpoint(max-md) {
+				flex-wrap: wrap;
+			}
+		}
+		&__address {
+			width: 45%;
+			@include justify;
+			@include breakpoint(max-md) {
+				flex-wrap: wrap;
+			}
+			gap: 20px;
+			&-item {
+				width: 225px;
+				h5 {
+					color: var(--white);
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+	&-three {
+		&-area {
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+			background-color: #121212;
+		}
+		&__shape {
+			&-left {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: -1;
+			}
+			&-right {
+				position: absolute;
+				bottom: 15px;
+				right: 0;
+				z-index: -1;
+				@include breakpoint(max-lg) {
+					display: none;
+				}
+			}
+		}
+		&__wrp {
+			@extend.footer__wrp;
+			position: relative;
+			max-width: 1300px;
+			&::after {
+				top: 0;
+				left: 22%;
+				width: 1px;
+				height: 100%;
+				background-color: #202020;
+				position: absolute;
+				content: "";
+				@include breakpoint(max-xl) {
+					display: none;
+				}
+			}
+		}
+		&__item {
+			@extend .footer__item;
+			&-last {
+				@extend.footer-three__item;
+				width: 380px;
+			}
+			p {
+				font-size: 18px;
+				line-height: 34px;
+			}
+			width: 190px;
+			.title {
+				color: var(--white);
+			}
+			ul {
+				li {
+					a {
+						color: var(--paragraph);
+					}
+				}
+			}
+			.socials {
+				display: flex;
+				gap: 15px;
+				a {
+					color: var(--paragraph);
+					font-size: 18px;
+					&:hover {
+						transform: translateY(-2px);
+						color: var(--theme-color1);
+					}
+				}
+			}
+			.mailUs {
+				position: relative;
+				input {
+					width: 100%;
+					padding: 20px 40px;
+					padding-left: 50px;
+					background-color: #202020;
+					border: none;
+					color: var(--paragraph);
+				}
+				span {
+					position: absolute;
+					left: 20px;
+					top: 22px;
+					color: var(--white);
+				}
+				button {
+					top: 20px;
+					right: 20px;
+					position: absolute;
+					color: var(--theme-color1);
+					font-size: 25px;
+				}
+			}
+			&-wrp {
+				@extend .footer__right;
+				width: 100%;
+			}
+		}
+		&__right {
+			width: 70%;
+		}
+		&__copyright {
+			text-align: center;
+			padding: 25px 0;
+			border-top: 1px solid #202020;
+			p {
+				a {
+					color: var(--white);
+					font-weight: 600;
+					&:hover {
+						color: var(--theme-color1);
+					}
+				}
+			}
+		}
+	}
+}
+// Footer area end here ***
